@@ -23,7 +23,7 @@ public class Client {
 
 		System.out.println("[서버에 연결을 요청합니다.]");
 
-		socket.connect(new InetSocketAddress("192.168.0.76", 10001));
+		socket.connect(new InetSocketAddress("192.168.0.56", 10001));
 
 		System.out.println("[서버에 연결되었습니다.]");
 
@@ -39,11 +39,11 @@ public class Client {
 
 		// Scanner (키보드 입력용)
 		Scanner sc = new Scanner(System.in);
-
-		while (true) {
+		
+		while(true) {
 			String str = sc.nextLine();
-
-			if ("/q".equals(str)) {
+			
+			if("/q".equals(str)) {
 				System.out.println("[종료키 입력]");
 				break;
 			}
@@ -58,7 +58,7 @@ public class Client {
 			System.out.println("server:[" + reMsg + "]");
 
 		}
-
+		
 		System.out.println("=======================================");
 		System.out.println("<클라이언트종료>");
 		sc.close();

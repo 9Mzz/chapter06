@@ -2,6 +2,7 @@ package echo.ex01;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -13,19 +14,19 @@ import java.net.Socket;
 public class Client {
 
 	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
 
 		Socket socket = new Socket();
 
 		System.out.println("<클라이언트 시작>");
-		System.out.println("==============================================");
+		System.out.println("=======================================");
 
-		System.out.println("[서버에 연결을 요청합니다]");
-		socket.connect(new InetSocketAddress("172.30.1.48", 10001));
+		System.out.println("[서버에 연결을 요청합니다.]");
 
-		System.out.println("[서버에 연결 되었습니다.]");
+		socket.connect(new InetSocketAddress("192.168.0.56", 10001));
 
-		// 메시지 보내기 스트림
+		System.out.println("[서버에 연결되었습니다.]");
+
+		// 메세지 보내기 스트림
 		OutputStream os = socket.getOutputStream(); // 주스트림
 		OutputStreamWriter osw = new OutputStreamWriter(os, "UTF-8");
 		BufferedWriter bw = new BufferedWriter(osw);
@@ -39,10 +40,11 @@ public class Client {
 		String str = "안녕하세요";
 		bw.write(str);
 		bw.newLine();
+		bw.flush();
 
 		// 메세지 받기
 		String reMsg = br.readLine();
-		System.out.println("server: [" + reMsg + "]");
+		System.out.println("server:[" + reMsg + "]");
 
 		bw.close();
 		socket.close();

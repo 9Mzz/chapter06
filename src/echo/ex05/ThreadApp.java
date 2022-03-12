@@ -3,21 +3,18 @@ package echo.ex05;
 public class ThreadApp {
 
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
 		
-		Runnable digit = new DigitRunableimpl();
-		
+		Runnable digit= new DigitRunableImpl();
 		Thread thread1 = new Thread(digit);
 		
 		thread1.start();
-		for( char ch='A'; ch<='Z'; ch++ ) {
+	
+		for(char ch='A'; ch<='Z'; ch++) {
 			System.out.println(ch);
 			Thread.sleep(1000);
-			
 		}
 		
-		
-		
+
 	}
 
 }

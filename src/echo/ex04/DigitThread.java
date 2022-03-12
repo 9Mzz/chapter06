@@ -1,13 +1,7 @@
-package echo.ex03;
+package echo.ex04;
 
 public class DigitThread extends Thread {
-	//필드
-	
-	//생성자
-	
-	//메소드 gs
-	
-	//메소드 일반
+
 	@Override
 	public void run() {
 
@@ -23,7 +17,5 @@ public class DigitThread extends Thread {
 		}
 
 	}
-
-
 
 }

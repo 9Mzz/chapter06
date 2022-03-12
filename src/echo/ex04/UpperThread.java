@@ -1,23 +1,21 @@
 package echo.ex04;
 
-public class UpperThread extends Thread{
+public class UpperThread extends Thread {
 
 	@Override
 	public void run() {
 
-		for(int unt=0; unt<=10; unt++ ) {
-			System.out.println(unt);
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		
+	    for (char ch = 'A'; ch <= 'Z'; ch++) {
+	        System.out.println(ch);
+
+	        try {
+	            Thread.sleep(1000);
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	        }
+
+	    }
+
 	}
-	
-	
 
 }
